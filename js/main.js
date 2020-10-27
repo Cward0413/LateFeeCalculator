@@ -11,10 +11,10 @@ function lateFeeCalc(){
     var lateDays = parseInt(prompt("How many day late are you returning these items?"));
 
     // multiply books by 0.25
-    var books = books * 0.25;
+     books = books * 0.25;
 
     // multiply dvds by 0.50
-    var dvd = dvd * 0.50
+     dvd = dvd * 0.50
 
     // add both products together
     // multiply sum by number of late days
