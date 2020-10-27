@@ -18,7 +18,7 @@ function lateFeeCalc(){
 
     // add both products together
     // multiply sum by number of late days
-    var total = (books + dvd) * lateDays;
+    var total = ((books + dvd) * lateDays).toFixed(2);
 
     // output answer to user
     alert(`You owe $${total} for returning these items late.`);
