@@ -1,5 +1,4 @@
 
-
 function lateFeeCalc(){
 
     //prompt user for number of books
@@ -24,3 +23,24 @@ function lateFeeCalc(){
     // output answer to user
     alert(`You owe $${total} for returning these items late.`);
 }
+
+function pizzaCalc(){
+
+    // prompt user for toppings on the pizza
+    // gather the total cost of the toppings
+    var numToppings = parseInt(prompt("How many toppings do you want on the pizza?"));
+    var toppingCost = 1.25 * numToppings
+
+    // get the total cost of the pizza
+    var totalCost = toppingCost + 15;
+
+    // prompt the user for the amount of people in the order
+    var numPeople = parseInt(prompt("How many people are part of this order?"));
+
+    // divide the total cost by the amount of people
+    var costPerPerson = (totalCost / numPeople).toFixed(2);
+
+    // alert the user of the cost per person
+    alert(`The cost of the pizza will be $${costPerPerson} per person.`);
+}
+
