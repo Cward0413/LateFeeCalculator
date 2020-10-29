@@ -1,11 +1,34 @@
-p{
+body{
     padding-top: 10%;
     text-align: center;
     margin: auto;
 }
-div{
+
+.labSection{
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
     align-content: center;
     margin: auto;
     width: 50%;
     text-align: center;
 }
+
+.sectionHeader{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.output{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#feeText{
+    display: none;
+}
+
+#costText{
+    display: none;
+}
+

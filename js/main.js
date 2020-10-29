@@ -1,46 +1,47 @@
+$(document).ready(
+    function(){
 
-function lateFeeCalc(){
+        //add event handlers
+        $("#calculateFee").click(lateFeeCalc);
+        $("#calculateCost").click(pizzaCalc);
 
-    //prompt user for number of books
-    var books = parseInt(prompt("How many books do you have checked out?"));
+        //all other functions (program logic)
+        function lateFeeCalc(){
 
-    // prompt user for number of dvds
-    var dvd = parseInt(prompt("How many DvDs do you have checked out?"));
+            //get input data
+            var books = $("#books").val();
+            books = parseFloat(books);
+            var dvds = $("#dvds").val();
+            dvds = parseFloat(dvds);
+            var lateDays = $("#lateDays").val();
+            lateDays = parseFloat(lateDays);
 
-    // prompt user for number of late days
-    var lateDays = parseInt(prompt("How many day late are you returning these items?"));
+            //do the math
+            books = books * 0.25;
+            dvds = dvds * 0.50;
+            var total = ((books + dvds) * lateDays).toFixed(2);
 
-    // multiply books by 0.25
-     books = books * 0.25;
+            // output answer to user
+            $("#feeOutput").text(total);
+            $("#feeText").css("display", "block");
+        }
 
-    // multiply dvds by 0.50
-     dvd = dvd * 0.50
+        function pizzaCalc(){
 
-    // add both products together
-    // multiply sum by number of late days
-    var total = ((books + dvd) * lateDays).toFixed(2);
+            // prompt user for toppings and people
+            var numToppings = $("#numToppings").val();
+            numToppings = parseFloat(numToppings);
+            var numPeople = $("#numPeople").val();
+            numPeople = parseFloat(numPeople);
 
-    // output answer to user
-    alert(`You owe $${total} for returning these items late.`);
-}
+            //do the math to get cost per person
+            var totalCost = 15 + (numToppings * 1.25);
+            var costPerPerson = (totalCost / numPeople).toFixed(2);
 
-function pizzaCalc(){
+            // alert the user of the cost per person
+            $("#priceOutput").text(costPerPerson);
+            $("#costText").css("display","block");
+        }
 
-    // prompt user for toppings on the pizza
-    // gather the total cost of the toppings
-    var numToppings = parseInt(prompt("How many toppings do you want on the pizza?"));
-    var toppingCost = 1.25 * numToppings
-
-    // get the total cost of the pizza
-    var totalCost = toppingCost + 15;
-
-    // prompt the user for the amount of people in the order
-    var numPeople = parseInt(prompt("How many people are part of this order?"));
-
-    // divide the total cost by the amount of people
-    var costPerPerson = (totalCost / numPeople).toFixed(2);
-
-    // alert the user of the cost per person
-    alert(`The cost of the pizza will be $${costPerPerson} per person.`);
-}
-
+    }
+)

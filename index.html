@@ -5,34 +5,73 @@
     <title>Title</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 
 </head>
 <body>
-    <div>
-        <p>Late books/DvDs? Check out how much you owe.</p>
+    <div class="labSection">
 
+        <p class="sectionHeader">Late books/DvDs? Check out how much you owe.</p>
         <br>
 
-        <div>
-        <button onclick="lateFeeCalc()">Show Late Fee</button>
+        <div class="formSection">
+            <label for="books">How many books do you have checked out?</label>
+            <input type="number" id="books">
         </div>
+        <br>
+
+        <div class="formSection">
+            <label for="dvds">How many Books do you have checked out?</label>
+            <input type="number" id="dvds">
+        </div>
+        <br>
+
+        <div class="formSection">
+            <label for="lateDays">How many days have these been overdue?</label>
+            <input type="number" id="lateDays">
+        </div>
+        <br>
+
+        <div class="formSection">
+            <button id="calculateFee">Show Late Fee</button>
+        </div>
+        <br>
+
+        <p id="feeText">You owe $<span id="feeOutput"></span> in late fees.</p>
+
     </div>
 
     <br>
 
-    <div>
-        <p>Want to order a pizza? Click the button below to see how much it'll cost!</p>
+    <div class="labSection">
 
+        <p class="sectionHeader">Want to order a pizza? Click the button below to see how much it'll cost!</p>
         <br>
 
-        <div>
-            <button onclick="pizzaCalc()">Click to see how much it'll cost per person.</button>
+        <div class="formSection">
+            <label for="numToppings">How toppings do you want on your pizza?</label>
+            <input type="number" id="numToppings">
         </div>
+        <br>
+
+        <div class="formSection">
+            <label for="numPeople">How people are ordering?</label>
+            <input type="number" id="numPeople">
         </div>
+        <br>
 
+        <div class="formSection">
+            <button id="calculateCost">Calculate the price!</button>
+        </div>
+        <br>
 
+        <p id="costText">The pizza will cost $<span id="priceOutput"></span> per person.</p>
 
-    <script src="js/main.js"></script>
+    </div>
 
 </body>
 </html>
